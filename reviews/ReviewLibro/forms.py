@@ -7,3 +7,13 @@ class UsuarioForm(forms.ModelForm):
         fields=[
             'user'
         ]
+
+class LibroForm(forms.ModelForm):
+    class Meta:
+        model=Libro
+        fields=[
+            'titulo',
+            'autor',
+            'fecha_publicacion',
+            'genero'
+        ]
