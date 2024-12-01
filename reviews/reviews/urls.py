@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ReviewLibro.views import myHomeView
+from ReviewLibro.views import myHomeView,UsuarioCreateView
 
 urlpatterns = [
     path('',myHomeView,name='Pagina de Inicio'),
+    path('usuario/',UsuarioCreateView,name='Crear Usuario'),
     path('admin/', admin.site.urls),
 ]
