@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import UsuarioForm,LibroForm
+from .forms import UsuarioForm,LibroForm,ReseñaForm
 # Create your views here.
 def myHomeView(request):
     return render(request,'reviews/inicio.html',)
@@ -25,3 +25,14 @@ def LibroCreateView(request):
         'form':form
     }
     return render(request,'reviews/LibroCreate.html',context)
+
+def ReseñaCreateView(request):
+    form=ReseñaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=ReseñaForm()
+    
+    context={
+        'form':form
+    }
+    return render(request,'reviews/ReseñaCreate.html',context)

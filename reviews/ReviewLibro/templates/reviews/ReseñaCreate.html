@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Reseña Form</title>
+    </head>
+    <body>
+        <h1>Registro de Reseñas</h1>
+        {% block content %}
+        <form method='POST'>{% csrf_token%}
+            {{form.as_p}}
+            <input type='submit' value='Grabar'/>
+        </form>
+        {% endblock %}
+    </body>
+</html>
