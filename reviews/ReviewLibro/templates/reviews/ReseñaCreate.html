@@ -3,6 +3,7 @@
         <title>Reseña Form</title>
     </head>
     <body>
+        {% include "reviews\nav.html" %}
         <h1>Registro de Reseñas</h1>
         {% block content %}
         <form method='POST'>{% csrf_token%}
